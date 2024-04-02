@@ -44,5 +44,6 @@ jobs:
     - name: Build and push
       uses: docker/build-push-action@v5
       with:
+        context: ./GeneratorApi
         push: true
         tags: ${{ vars.CONTAINER_IMAGE_NAME }}:latest
