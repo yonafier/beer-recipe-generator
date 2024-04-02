@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: generatorapi-deployment
+  labels:
+    app: generatorapi
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: generatorapi
+  template:
+    metadata:
+      labels:
+        app: generatorapi
+    spec:
+      containers:
+        - name: generatorapi
+          image: eladyona/dev:latest
+          ports:
+            - containerPort: 8080
+            - containerPort: 8081
