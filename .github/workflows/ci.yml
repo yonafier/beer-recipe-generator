@@ -47,4 +47,4 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           push: true
-          tags: ${{ variables.CONTAINER_IMAGE_NAME }}:latest
+          tags: $CONTAINER_IMAGE_NAME:latest
