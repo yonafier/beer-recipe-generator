@@ -7,7 +7,7 @@ EXPOSE 8081
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["GeneratorApi/GeneratorApi.csproj", "GeneratorApi/"]
+COPY ["./GeneratorApi.csproj", "GeneratorApi/"]
 RUN dotnet restore "GeneratorApi/GeneratorApi.csproj"
 COPY . .
 WORKDIR "/src/GeneratorApi"
