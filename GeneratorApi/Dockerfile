@@ -10,8 +10,6 @@ WORKDIR /src
 COPY ["./GeneratorApi.csproj", "GeneratorApi/"]
 RUN dotnet restore "GeneratorApi/GeneratorApi.csproj"
 COPY . .
-WORKDIR "/src/GeneratorApi"
-RUN dotnet build "GeneratorApi.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 FROM build AS publish
 ARG BUILD_CONFIGURATION=Release
