@@ -26,12 +26,10 @@ jobs:
     - name: Test
       run: dotnet test --no-build --verbosity normal
   
-  # docker:
-  #   needs: build 
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     -
-      
+  docker:
+    needs: build 
+    runs-on: ubuntu-latest
+    steps:
     - name: Set up QEMU
       uses: docker/setup-qemu-action@v3
     - name: Set up Docker Buildx
